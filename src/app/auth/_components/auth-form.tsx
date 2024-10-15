@@ -9,6 +9,7 @@ import { AlertCircle, Loader2 } from "lucide-react"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { useForm } from 'react-hook-form'
 import { signIn } from 'next-auth/react'
+import { toast } from '@/hooks/use-toast'
 
 export default function AuthForm() {
 	const [email, setEmail] = useState('')
@@ -19,9 +20,19 @@ export default function AuthForm() {
 	const form = useForm()
 
 	const handleSubmit = form.handleSubmit(async (data) => {
-		console.log(data)
+		try {
+			await signIn('email', { email: data.email, redirect: false })
+			toast({
+				title: 'Magic Link Sent',
+				description: 'Check your email for the magic link to login'
+			})
+		} catch (err) {
+			toast({
+				title: 'Magic Link Error',
+				description: 'Check your email for the magic link to login'
+			})
+		}
 
-		await signIn('email', { email: data.email})
 	})
 
 	return (
