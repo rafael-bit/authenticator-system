@@ -38,7 +38,7 @@ Open this adress in your navegation: [http://localhost:3000](http://localhost:30
 
 # 💻 Technologies
 
-[Next.js](https://nextjs.org/), [NextAuth](https://next-auth.js.org/), [Prisma](https://www.prisma.io/), [Resend](https://resend.com/) e [Tailwind CSS](https://tailwindcss.com/).
+[Next.js](https://nextjs.org/), [NextAuth](https://next-auth.js.org/), [Prisma](https://www.prisma.io/), [Resend](https://resend.com/) and [Tailwind CSS](https://tailwindcss.com/).
 
 #  🚩 Bugs
 
